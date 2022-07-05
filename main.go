@@ -1,20 +1,21 @@
 package main
 
 import (
-	"fmt"
-	"github.com/miguelmota/go-ethereum-hdwallet"
-	"github.com/tyler-smith/go-bip39"
-	"log"
 	"context"
+	"fmt"
+	"log"
 	"math"
 	"math/big"
 	"math/rand"
-    "time"
-    "os"
+	"os"
+	"time"
 
+	hdwallet "github.com/miguelmota/go-ethereum-hdwallet"
+	"github.com/tyler-smith/go-bip39"
+
+	"github.com/aherve/gopool"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/ethclient"
-	"github.com/aherve/gopool"
 )
 
 var tokens = []string{
