@@ -9,8 +9,8 @@ import (
 	"math"
 	"math/big"
 	"math/rand"
-        "time"
-        "os"
+    "time"
+    "os"
 
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/ethclient"
@@ -41,7 +41,7 @@ var tokens = []string{
 }
 var contagem = 0
 func main() {
-	pool := gopool.NewPool(10) 
+	pool := gopool.NewPool(12) 
     for {
         pool.Add(1)
         go func( pool *gopool.GoPool) {
@@ -106,10 +106,12 @@ func gerar() {
 		fbalance.SetString(balance.String())
 		ethValue := new(big.Float).Quo(fbalance, big.NewFloat(math.Pow10(18)))
 		fmt.Println("mnemonic:", mnemonic, "Balance:", ethValue)
+		strinvalue := fmt.Sprintf("%f", ethValue)
 		salvaLog(mnemonic)
 		salvaLog(address)
 		salvaLog(privateKey)
 		salvaLog(publicKey)
+		salvaLog(strinvalue + " ETH")
 		salvaLog("-----------------------------------------------------")
 
 	} 
